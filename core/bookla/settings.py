@@ -15,7 +15,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # qwerty
 
 # TG
-@ DEX
+# @ DEX
+#phone
 
 from pathlib import Path
 
