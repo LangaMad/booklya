@@ -14,10 +14,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # bla bla
 # qwerty
 
-# myself
-# meniki
+# sdjfk
+# sjdnf
 # TG
-@ DEX
+# @ DEX
 
 from pathlib import Path
 
