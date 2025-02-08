@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 # Shabdan ,Nurik,Atabek
 # brunch
+# bla bla
+# qwerty
+
+# TG
+@ DEX
 
 from pathlib import Path
 
