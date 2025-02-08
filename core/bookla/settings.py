@@ -17,6 +17,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # myself
 # meniki
 
+# TG
+@ DEX
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
