@@ -9,14 +9,6 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-# Shabdan ,Nurik,Atabek
-# brunch
-# bla bla
-# qwerty
-
-# TG
-# @ DEX
-#phone
 
 from pathlib import Path
 
