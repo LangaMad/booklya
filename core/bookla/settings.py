@@ -9,17 +9,6 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-# Shabdan ,Nurik,Atabek
-# brunch
-# bla bla
-# qwerty
-
-# sdjfk
-# sjdnf
-# TG
-# @ DEX
-
-# Shabdan - sandwich
 
 from pathlib import Path
 
