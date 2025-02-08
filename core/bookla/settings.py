@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # sdjfk
 # sjdnf
 # TG
-@ DEX
+# @ DEX
 
 from pathlib import Path
 
