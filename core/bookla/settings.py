@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # qwerty
 
 # myself
-# men
+# meniki
 
 from pathlib import Path
 
