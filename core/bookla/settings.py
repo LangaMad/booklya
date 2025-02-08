@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # brunch
 # bla bla
 
+# sdjfk
+# sjdnf
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
