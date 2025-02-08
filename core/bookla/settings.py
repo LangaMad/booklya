@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # brunch
 # bla bla
 
+
+#hello
+#world
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
