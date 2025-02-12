@@ -115,37 +115,38 @@
                                                             <h2>Send us a message</h2>
                                                             <span class="underline left"></span>
                                                             <div class="contact-fields">
-                                                                <form id="contact" name="contact" action="http://libraria.demo.presstigers.com/contact.html" method="post" >
+                                                                <form id="contact" name="contact" action="{% url 'contact_us' %}" method="post">
+                                                                    {% csrf_token %}
                                                                     <div class="row">
                                                                         <div class="col-md-6 col-sm-6">
                                                                             <div class="form-group">
-                                                                                <input class="form-control" type="text" placeholder="First Name" name="first-name" id="first-name" size="30" value="" aria-required="true" />
+                                                                                {{ form.first_name }}
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-6 col-sm-6">
                                                                             <div class="form-group">
-                                                                                <input class="form-control" type="text" placeholder="Last Name" name="last-name" id="last-name" size="30" value="" aria-required="true" />
+                                                                                {{ form.last_name }}
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-6 col-sm-6">
                                                                             <div class="form-group">
-                                                                                <input class="form-control" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="Email" name="email" id="email" size="30" value="" aria-required="true" />
+                                                                                {{ form.email }}
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-6 col-sm-6">
                                                                             <div class="form-group">
-                                                                                <input class="form-control" type="text" placeholder="Phone Number" name="phone" id="phone" size="30" value="" aria-required="true" />
+                                                                                {{ form.phone }}
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-sm-12">
                                                                             <div class="form-group">
-                                                                                <textarea class="form-control" placeholder="Your message" id="message" aria-required="true"></textarea>
+                                                                                {{ form.text }}
                                                                                 <div class="clearfix"></div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-sm-12">
                                                                             <div class="form-group form-submit">
-                                                                                <input class="btn btn-default" id="submit-contact-form" type="button" name="submit" value="Send Message"  />
+                                                                                <button class="btn btn-default" type="submit" > Send Message </button>
                                                                             </div>
                                                                         </div>
                                                                         <div id="success">
