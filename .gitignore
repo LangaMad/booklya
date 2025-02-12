@@ -1,7 +1,11 @@
 /venv
 venv
-/idea
-.idea
-idea
-__pycache__
-__idea__
+.env
+
+
+
+
+
+
+
+
