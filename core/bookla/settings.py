@@ -11,9 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import  os
-from xml.etree.ElementInclude import default_loader
-
+import os
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -41,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.accounts',
+    'apps.books',
+    'apps.cart',
+    'apps.main'
 
 
-    'apps.main',
 ]
 
 MIDDLEWARE = [
@@ -57,12 +58,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bookla.urls'
-WSGI_APPLICATION = 'bookla.wsgi.application'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,6 +75,10 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL  = 'accounts.User'
+
+WSGI_APPLICATION = 'bookla.wsgi.application'
+
 
 
 # Database
@@ -83,11 +87,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config("DB_NAME"),
-        'USER': config("DB_USER"),
-        'PASSWORD':config("DB_PASSWORD") ,
-        'HOST': config("DB_HOST"),  # localhost
-        'PORT': config("DB_PORT"),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'), # or 'localhost'
+        'PORT': config('DB_PORT', default=5432), # 5432
     }
 }
 
