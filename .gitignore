@@ -1,5 +1,12 @@
 /venv
 venv
+/idea
+.idea
+idea
+__pycache__
+__idea__
+/migrations
+migrations
 .env
 /core/.env
 
