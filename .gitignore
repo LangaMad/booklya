@@ -8,3 +8,4 @@ __idea__
 /migrations
 migrations
 .env
+core/.env

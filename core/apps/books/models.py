@@ -67,3 +67,29 @@ class BookLanguage(models.Model):
     class Meta:
         verbose_name = 'Язык'
         verbose_name_plural = 'Языки'
+
+
+class AudioBook(models.Model):
+    title = models.CharField('Название книги', max_length=100)
+    author = models.CharField('Имя автора', max_length=150)
+    isbn = models.CharField('Серия', max_length=50, unique=True)
+    rate = models.FloatField('Оценка')
+    edition = models.CharField('Версия', max_length=50)
+    publisher = models.CharField('Издатель', max_length=110)
+    review = models.TextField('Отзыв')
+    description = models.TextField('Описание')
+    image = models.ImageField('Фото книги', upload_to='books/')
+    pages = models.IntegerField('Количество страниц', blank=True, null=True)
+    book_format = models.CharField('Формат книги', max_length=50)
+    is_active = models.BooleanField('Доступность', default=True)
+    genres = models.ManyToManyField(Genre, related_name='book_genre')
+    tags = models.ManyToManyField(Tag, related_name='book_tag')
+    created_at = models.DateTimeField('Дата создания', auto_now_add=True)
+    audio_file = models.FileField('Аудиофайл', upload_to='audiobooks/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Аудиокнига'
+        verbose_name_plural = 'Аудиокниги'
