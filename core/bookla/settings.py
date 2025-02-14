@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.accounts',
+    'apps.books',
+    'apps.cart',
+    'apps.main'
+
+
 ]
 
 MIDDLEWARE = [
@@ -51,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'bookla.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +75,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+AUTH_USER_MODEL  = 'accounts.User'
+
+WSGI_APPLICATION = 'bookla.wsgi.application'
+
 
 
 # Database
@@ -122,6 +131,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 
 # Default primary key field type

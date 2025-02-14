@@ -9,3 +9,6 @@ __idea__
 migrations
 .env
 core/.env
+.idea/booklya.iml
+.idea/misc.xml
+core/.env
