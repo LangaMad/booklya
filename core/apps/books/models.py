@@ -1,5 +1,5 @@
 from django.db import models
-from ..accounts.models import User
+
 # Create your models here.
 
 
@@ -83,7 +83,7 @@ class AudioBook(models.Model):
 
 class Commentary(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_comments')
-    user_name = models.CharField('Имя пользователя', max_length=100)
+    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='user_comments')
     comment_text = models.TextField('Комментарий')
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
 

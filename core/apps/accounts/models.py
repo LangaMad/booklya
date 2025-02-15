@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import  AbstractUser,BaseUserManager
-from ..books.models import *
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -35,7 +35,7 @@ class User(AbstractUser):
     phone = models.IntegerField('Номер телефона',blank=True,null=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
-    favorite_books = models.ManyToManyField(Book, related_name='favorite_book')
+    favorite_books = models.ManyToManyField('books.Book', related_name='favorite_book')
     balance = models.DecimalField('Счет',  max_digits=7, decimal_places=2,null=True, blank=True)
 
 
