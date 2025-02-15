@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+from ..accounts.models import User
 
 
 class Genre(models.Model):
@@ -46,7 +47,6 @@ class Book(models.Model):
     genres = models.ManyToManyField(Genre, related_name='book_genre')
     tags = models.ManyToManyField(Tag, related_name='book_tag')
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
-    comments = models.ManyToManyField('Commentary', blank=True, related_name='book_comments')
 
     def __str__(self):
         return self.title
@@ -75,11 +75,12 @@ class AudioBook(models.Model):
     audiobook_file = models.FileField('Аудиофайл', upload_to='audiobooks/')
 
     def __str__(self):
-        return self.title
+        return f"{self.book.title} - {self.language}"
 
     class Meta:
         verbose_name = 'Аудиокнига'
         verbose_name_plural = 'Аудиокниги'
+
 
 class Commentary(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_comments')
@@ -88,7 +89,8 @@ class Commentary(models.Model):
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
 
     def __str__(self):
-        return f"Комментарий от {self.user_name} на {self.book.title}"
+        return f"Комментарий от {self.user.username if self.user else 'Аноним'} на {self.book.title}"
+
 
     class Meta:
         verbose_name = 'Комментарий'
