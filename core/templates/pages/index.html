@@ -604,18 +604,13 @@
                             <span class="underline center"></span>
                             <p class="lead">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                         </div>
-                        <div class="form-group">
-                            <form method="post">
-                                {% csrf_token %}
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        {{ form.email }}
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit">Submit</button>
-                            </form>
+                        <div class="contact-fields">
+                        <form class="form-group" method="post">
+
+                            {% csrf_token %}
+                            {{form.email}}
+                            <button class="form-control" value="Subscribe" type="submit" ></button>
+                        </form>
                         </div>
                     </div>
                 </div>
