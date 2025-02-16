@@ -144,11 +144,11 @@
                                         <li class="dropdown">
                                             <a data-toggle="dropdown" class="dropdown-toggle disabled" href="books-media-list-view.html">Books &amp; Media</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="books-media-list-view.html">Books &amp; Media List View</a></li>
+                                                <li><a href="{% url 'book_list' %}">Books &amp; Media List View</a></li>
                                                 <li><a href="books-media-gird-view-v1.html">Books &amp; Media Grid View V1</a></li>
                                                 <li><a href="books-media-gird-view-v2.html">Books &amp; Media Grid View V2</a></li>
-                                                <li><a href="books-media-detail-v1.html">Books &amp; Media Detail V1</a></li>
-                                                <li><a href="books-media-detail-v2.html">Books &amp; Media Detail V2</a></li>
+                                                <li><a href="{% url 'book_detail_1' %}">Books &amp; Media Detail V1</a></li>
+                                                <li><a href="{% url 'book_detail_2' %}">Books &amp; Media Detail V2</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown">
@@ -304,7 +304,6 @@
 {% block content %}
 
 {% endblock %}
-        <!-- End: Social Network -->
 
         <!-- Start: Footer -->
         <footer class="site-footer">

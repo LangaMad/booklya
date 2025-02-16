@@ -61,3 +61,24 @@ class LanguageAdmin(admin.ModelAdmin):
     ]
     list_filter = ['language']
     search_fields = ['book__title', 'language']
+
+
+
+@admin.register(AudioBook)
+class AudioBookAdmin(admin.ModelAdmin):
+    list_display = ['book', 'language',
+                    'audiobook_file']
+    search_fields = ['book__title',
+                     'language']
+    list_filter = ['language',]
+
+
+
+@admin.register(Commentary)
+class CommentaryAdmin(admin.ModelAdmin):
+    list_display = ['book', 'user',
+                    'created_at']
+    search_fields = ['book__title',
+                     'user__username',
+                     'comment_text']
+    list_filter = ['created_at',]
