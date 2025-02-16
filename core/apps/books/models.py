@@ -1,7 +1,7 @@
 from django.db import models
 # Create your models here.
 
-from ..accounts.models import User
+from apps.accounts.models import User
 
 
 class Genre(models.Model):

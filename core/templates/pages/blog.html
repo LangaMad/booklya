@@ -11,48 +11,69 @@
                             <div class="row">
                                 <div class="blog-page grid">
                                     <article>
+                                        {% for post in posts %}
                                         <div class="grid-item blog-item">
                                             <div class="post-thumbnail">
                                                 <div class="post-date-box">
                                                     <div class="post-date">
-                                                        <a class="date" href="#.">07</a>
+                                                        <a class="date" href="#.">{{ post.created_at|date:'d'}}</a>
                                                     </div>
                                                     <div class="post-date-month">
-                                                        <a class="month" href="#.">Mar</a>
+                                                        <a class="month" href="#.">{{ post.created_at|date:'M'}}</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-detail.html"><img alt="blog" src="{% static 'images/blog/blog-01.jpg' %}" /></a>
-                                                <div class="post-share">
-                                                    <a href="#."><i class="fa fa-comment"></i> 37</a>
-                                                    <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
-                                                    <a href="#."><i class="fa fa-eye"></i> 180</a>
-                                                    <a href="#."><i class="fa fa-share-alt"></i> Share</a>
-                                                </div>
+                                                <a href="blog-detail.html"><img alt="blog" src="{{ post.image.url }}" /></a>
                                             </div>
                                             <div class="post-detail">
                                                 <header class="entry-header">
                                                     <div class="blog_meta_category">
                                                         <span class="arrow-right"></span>
-                                                        <a href="#." rel="category tag">Science</a>,
-                                                        <a href="#." rel="category tag">art</a>
+                                                        <a href="#." rel="category tag">{{ post.category }}</a>,
+                                                        <a href="#." rel="category tag">{{ post.tags  }}</a>
                                                     </div>
-                                                    <h3 class="entry-title"><a href="blog-detail.html">Here each week my friends</a></h3>
+                                                    <h3 class="entry-title"><a href="blog-detail.html">{{ post.title }}</a></h3>
                                                     <div class="entry-meta">
-                                                        <span><i class="fa fa-user"></i> <a href="#">Admin</a></span>
-                                                        <span><i class="fa fa-comment"></i> <a href="#">15 Comments</a></span>
+                                                        <span><i class="fa fa-user"></i> <a href="#">{{ post.author }}</a></span>
+                                                        <span><i class="fa fa-comment"></i> <a href="#">{{ post.post_comments.count }} comments</a></span>
                                                     </div>
                                                 </header>
                                                 <div class="entry-content">
-                                                    <p>Curabitur sagittis fermentum ante at imperdiet. Proin viverra arcu ac quam finibus, efficitur rutrum turpis auctor. Maecenas at mi vitae lacus tempus egestas nec eget eros. Nunc eget est tellus. Quisque quis mattis eros, sit amet facilisis felis. Aliquam molestie purus venenatis lorem laoreet venenatis.....</p>
+                                                    <p>{{post.text|slice:':100'}}</p>
                                                 </div>
                                                 <footer class="entry-footer">
-                                                    <a class="btn btn-default" href="blog-detail.html">Read More</a>
+                                                    <a class="btn btn-default" href="{%url 'blog_detail' post.id %}">Read More</a>
                                                 </footer>
                                             </div>
                                         </div>
+                                        {% endfor %}
                                     </article>
                                 </div>
-                                <a href="#" id="loadmore">Load More Posts</a>
+{% if is_paginated %}
+        <div class="row mx-0">
+            <div class="col-12 text-center pb-4 pt-4">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
+                {% else %}
+                    <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
+                {%endif%}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <a href="#" class="btn_pagging active">{{ num }}</a>
+                    {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                        <a href="?page={{ num }}" class="btn_pagging active">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
+                {% else %}
+                    <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
+                {%endif%}
+             </div>
+        </div>
+        {% endif %}
                             </div>
                         </div>
                     </div>
