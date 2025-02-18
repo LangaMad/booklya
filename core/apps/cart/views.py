@@ -5,27 +5,36 @@ from ..books.models import Book
 # Create your views here.
 
 
-class CartView(View):
-    def cart_add(self,request,book_id):
-        book = Book.objects.get(id=book_id)
-        cart, created = Cart.objects.get_or_create(user=request.user)
-        cart_item, created = CartItem.objects.get_or_create(cart=cart, book=book)
-        cart_item.quantity += 1
-        cart_item.save()
-        cart.calculate_total_price()
-        return render(request, 'page/cart.html', {'cart': cart})
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView
+from .models import Cart, CartItem
+from ..books.models import Book
 
-    def cart_remove(self, request, cart_item_id):
-        cart_item = CartItem.objects.get(id=cart_item_id)
-        cart_item.delete()
-        cart = Cart.objects.get(user=request.user)
-        cart.calculate_total_price()
-        return render(request, 'page/cart.html', {'cart': cart})
+class CartGenericView(TemplateView):
+    template_name = 'pages/cart.html'
 
-    def get(self,request,action,cart_item_id):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        action = self.kwargs.get('action')
+        cart_item_id = self.kwargs.get('cart_item_id')  # для add это book_id, для remove — cart_item_id
+
         if action == 'add':
-            return self.cart_add(request, cart_item_id)
+            book = get_object_or_404(Book, id=cart_item_id)
+            cart, created = Cart.objects.get_or_create(
+                user=self.request.user,
+                defaults={'total_price': 0.00}
+            )
+            cart_item, created = CartItem.objects.get_or_create(cart=cart, book=book)
+            cart_item.quantity += 1
+            cart_item.save()
+            cart.calculate_total_price()
         elif action == 'remove':
-            return self.cart_remove(request, cart_item_id)
+            cart_item = get_object_or_404(CartItem, id=cart_item_id)
+            cart_item.delete()
+            cart = get_object_or_404(Cart, user=self.request.user)
+            cart.calculate_total_price()
         else:
-            return render(request, 'page/cart.html', {'cart': None})
+            cart = None
+
+        context['cart'] = cart
+        return context
