@@ -1,8 +1,8 @@
 from django.db import models
 
-
 # Create your models here.
 
+from apps.accounts.models import User
 
 
 class Genre(models.Model):
@@ -41,7 +41,7 @@ class Book(models.Model):
     description = models.TextField('Описание')
     image = models.ImageField('Фото книги', upload_to='books/')
     pages = models.IntegerField('Количество страниц', blank=True, null=True)
-    is_book = models.BooleanField('Формат книги')
+    is_book = models.BooleanField('Формат книги', default=True)
     is_active = models.BooleanField('Доступность', default=True)
     genres = models.ManyToManyField(Genre, related_name='book_genre')
     tags = models.ManyToManyField(Tag, related_name='book_tag')
@@ -68,16 +68,29 @@ class BookLanguage(models.Model):
         verbose_name = 'Язык'
         verbose_name_plural = 'Языки'
 
+class AudioBook(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='audiobooks')
+    language = models.CharField('Язык', max_length=100)
+    audiobook_file = models.FileField('Аудиофайл', upload_to='audiobooks/')
+
+    def __str__(self):
+        return f"{self.book.title} - {self.language}"
+
+    class Meta:
+        verbose_name = 'Аудиокнига'
+        verbose_name_plural = 'Аудиокниги'
 
 
+class Commentary(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_comments')
+    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='user_comments', blank=True, null=True,)
+    comment_text = models.TextField('Комментарий')
+    created_at = models.DateTimeField('Дата создания', auto_now_add=True)
+
+    def __str__(self):
+        return f"Комментарий от {self.user.username if self.user else 'Аноним'} на {self.book.title}"
 
 
-
-
-
-
-
-
-
-
-
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'

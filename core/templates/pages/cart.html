@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block contend %}
+{% block content%}
 
- <!-- Start: Cart Section -->
+        <!-- Start: Cart Section -->
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -87,7 +87,7 @@
                                                                     </form>
                                                                 </td>
                                                                 <td data-title="action" class="product-action">
-                                                                                                                            <form method="post" action="{% url 'cart_remove' item.id %}">
+                                                                    <form method="post" action="{% url 'cart_remove' item.id %}">
                                                                         {% csrf_token %}
                                                                         <button type="submit" class="btn btn-sm btn-danger">Remove</button>
                                                                     </form>
@@ -137,4 +137,4 @@
         </div>
         <!-- End: Cart Section -->
 
-{% endblock %}
+{% endblock%}
