@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Cart, CartItem
+from .models import Cart,CartItem
 from ..books.models import Book
 # Create your views here.
 
 
 class CartView(View):
-    def cart_add(self, request, book_id):
+    def cart_add(self,request,book_id):
         book = Book.objects.get(id=book_id)
         cart, created = Cart.objects.get_or_create(user=request.user)
-        cart_item, created = CartItem.objects.get_or_create(cart = cart, book= book)
+        cart_item, created = CartItem.objects.get_or_create(cart=cart, book=book)
         cart_item.quantity += 1
         cart_item.save()
         cart.calculate_total_price()
@@ -22,7 +22,7 @@ class CartView(View):
         cart.calculate_total_price()
         return render(request, 'page/cart.html', {'cart': cart})
 
-    def get(self, request, action, cart_item_id):
+    def get(self,request,action,cart_item_id):
         if action == 'add':
             return self.cart_add(request, cart_item_id)
         elif action == 'remove':
