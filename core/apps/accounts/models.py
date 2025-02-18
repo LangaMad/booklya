@@ -28,7 +28,6 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-
     username = None
     email = models.EmailField('Почта',unique=True)
     avatar = models.ImageField('Аватар', upload_to='avatar/',blank=True,null=True)
