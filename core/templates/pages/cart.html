@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block content%}
 
-<!-- Start: Cart Section -->
+        <!-- Start: Cart Section -->
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -46,7 +46,7 @@
                                                 </ul>
                                                 <div class="tab-content">
                                                     <div id="sectionA" class="tab-pane fade in active">
-                                                     <form method="post" action="">
+                                                         <form method="post" action="">
                                                     {% csrf_token %}
                                                     <table class="table table-bordered shop_table cart">
                                                         <thead>
@@ -86,8 +86,6 @@
                                                                         <button type="submit" class="btn btn-sm btn-primary mt-1">Update</button>
                                                                     </form>
                                                                 </td>
-                                                                <td data-title="action" class="product-action">
-                                                                    <form method="post" action="{% url 'cart_remove' item.id %}">
                                                                         {% csrf_token %}
                                                                         <button type="submit" class="btn btn-sm btn-danger">Remove</button>
                                                                     </form>
@@ -103,7 +101,7 @@
                                                         </tbody>
                                                     </table>
                                                 </form>
-                                                     </div>
+                                                    </div>
                                                     <div id="sectionB" class="tab-pane fade in">
                                                         <h5>Lorem Ipsum Dolor</h5>
                                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
@@ -137,6 +135,4 @@
         </div>
         <!-- End: Cart Section -->
 
-{% endblock %}
-
-
+{% endblock%}
