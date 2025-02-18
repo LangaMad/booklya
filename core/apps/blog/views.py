@@ -2,7 +2,7 @@ from django.shortcuts import render ,get_object_or_404, redirect
 from django.views.generic import TemplateView, ListView, DetailView, View
 from .models import Post, PostCommentary
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.db.models import Q
 
 # Create your views here.
 class BlogView(ListView):
@@ -11,6 +11,13 @@ class BlogView(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.all().order_by()
     paginate_by = 3
+
+    def get_queryset(self):
+        search_text = self.request.GET.get('query')
+        if search_text is None:
+            return Post.objects.all()
+        q = Post.objects.filter(Q(title__icontains= search_text)|Q(text__icontains= search_text))
+        return q
 
 class DetailBlogView(DetailView):
     template_name = 'pages/blog_detail.html'
