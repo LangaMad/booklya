@@ -42,7 +42,7 @@ class Book(models.Model):
     description = models.TextField('Описание')
     image = models.ImageField('Фото книги', upload_to='books/')
     pages = models.IntegerField('Количество страниц', blank=True, null=True)
-    book_format = models.CharField('Формат книги', max_length=50)
+    book_format = models.BooleanField('Формат книги', default=True)
     is_active = models.BooleanField('Доступность', default=True)
     genres = models.ManyToManyField(Genre, related_name='book_genre')
     tags = models.ManyToManyField(Tag, related_name='book_tag')
@@ -84,7 +84,7 @@ class AudioBook(models.Model):
 
 class Commentary(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_comments')
-    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='user_comments')
+    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='user_comments', null=True, blank=True)
     comment_text = models.TextField('Комментарий')
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
 

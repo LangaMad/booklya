@@ -20,8 +20,3 @@ class BookDetailView1(DetailView):
         context = super().get_context_data(**kwargs)
         context['book_languages'] = BookLanguage.objects.filter(book=self.object)
         return context
-
-class BookDetailView2(DetailView):
-    model = Book
-    template_name = 'pages/book_detail_2.html'
-    context_object_name = 'book2'
