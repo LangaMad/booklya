@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.books',
     'apps.cart',
-    'apps.main'
+    'apps.main',
     'apps.news'
 ]
 

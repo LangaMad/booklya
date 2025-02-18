@@ -29,7 +29,7 @@ class BookAdmin(admin.ModelAdmin):
         'description',
         'image',
         'pages',
-        'book_format',
+        'is_book',
         'is_active',
         'display_genres',
         'display_tags',
