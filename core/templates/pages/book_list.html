@@ -101,7 +101,7 @@
                                                         <div class="optional-links">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="#" target="_blank" data-toggle="blog-tags" data-placement="top" title="Add TO CART">
+                                                                    <a href="{% url 'cart_action' action='add' cart_item_id=book.id %}" target="_blank" data-toggle="blog-tags" data-placement="top" title="Add TO CART">
                                                                         <i class="fa fa-shopping-cart"></i>
                                                                     </a>
                                                                 </li>
@@ -130,7 +130,7 @@
                                                             <div class="row">
                                                                 <div class="col-sm-6">
                                                                     <h3 class="entry-title">
-                                                                        <a href="{% url 'book1' %}">{{ book.title }}</a>
+                                                                        <a href="{% url 'book_detail_1' book_id %}">{{ book.title }}</a>
                                                                     </h3>
                                                                     <ul>
                                                                         <li><strong>Author:</strong>{{ book.author }}</li>
@@ -162,7 +162,7 @@
                                                             <p>{{ book.description }}</p>
                                                         </div>
                                                         <footer class="entry-footer">
-                                                            <a class="btn btn-dark-gray" href="{% url 'book_detail_1' %}">Read More</a>
+                                                            <a class="btn btn-dark-gray" href="{% url 'book_detail_1' book_id %}">Read More</a>
                                                         </footer>
                                                     </div>
                                                     <div class="clear"></div>
@@ -445,7 +445,7 @@
                                                     </ul>
                                                 </div>
                                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here...</p>
-                                                <a class="btn btn-primary" href="{% url 'book_detail_1' %}">Read More</a>
+                                                <a class="btn btn-primary" href="{% url 'book_detail_1' book_id %}">Read More</a>
                                             </div>
                                         </div>
                                     </div>
