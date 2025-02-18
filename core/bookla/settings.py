@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'apps.books',
     'apps.cart',
     'apps.main'
-
-
+    'apps.news'
 ]
 
 MIDDLEWARE = [
