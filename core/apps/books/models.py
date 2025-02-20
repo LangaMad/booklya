@@ -34,9 +34,9 @@ class Tag(models.Model):
 class Book(models.Model):
     title = models.CharField('Название книги', max_length=100)
     author = models.CharField('Имя автора', max_length=150)
-    isbn = models.CharField('Серия', max_length=50, unique=True)
+    isbn = models.CharField('Артикул', max_length=50, unique=True)
     rate = models.FloatField('Оценка')
-    edition = models.CharField('Версия', max_length=50)
+    edition = models.CharField('Выпуск', max_length=50)
     publisher = models.CharField('Издатель', max_length=110)
     description = models.TextField('Описание')
     image = models.ImageField('Фото книги', upload_to='books/')

@@ -89,7 +89,7 @@
                                                                 <td data-title="action" class="product-action">
                                                                     <form method="post" action="">
                                                                         {% csrf_token %}
-                                                                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                                                        <button type="submit" class="btn btn-sm btn-danger"><a href="{% url 'cart_action' action='remove' cart_item_id=item.book.id %}">Remove</a></button>
                                                                     </form>
                                                                 </td>
                                                                 <td data-title="Price" class="product-price">
