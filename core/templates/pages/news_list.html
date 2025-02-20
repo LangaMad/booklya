@@ -2,6 +2,21 @@
 {% load static %}
 {% block content %}
 
+<section class="page-banner news-listing-banner services-banner">
+            <div class="container">
+                <div class="banner-header">
+                    <h2>News Listing</h2>
+                    <span class="underline center"></span>
+                    <p class="lead">Proin ac eros pellentesque dolor pharetra tempo.</p>
+                </div>
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li>News</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 <!-- Meta -->
 <!-- Start: Products Section -->
 <div id="content" class="site-content">
@@ -35,11 +50,7 @@
                                                     <div class="form-group">
                                                         <select name="locations" id="locations" class="form-control">
                                                             <option>All Locations</option>
-                                                            <option>Location 01</option>
-                                                            <option>Location 02</option>
-                                                            <option>Location 03</option>
-                                                            <option>Location 04</option>
-                                                            <option>Location 05</option>
+                                                            <option>{{ new.location }}</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -64,18 +75,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 col-sm-3">
-                                                    <div class="form-group">
-                                                        <select name="agegroup" id="agegroup" class="form-control">
-                                                            <option>Age Group</option>
-                                                            <option>Age Group 01</option>
-                                                            <option>Age Group 02</option>
-                                                            <option>Age Group 03</option>
-                                                            <option>Age Group 04</option>
-                                                            <option>Age Group 05</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+
                                                 <div class="col-md-4 col-sm-3">
                                                     <div class="form-group">
                                                         <select name="language" id="language" class="form-control">
@@ -152,14 +152,13 @@
                                                         </li>
                                                         <li>
                                                             <a href="#" target="_blank">
-                                                                <i class="fa fa-map-marker"></i>
-                                                                New York, USA
+                                                                {{ new.location }}
                                                             </a>
                                                         </li>
                                                     </ul>
                                                     <h3><a href="news-events-detail.html">{{ new.title }}</a></h3>
                                                     <p>{{ new.description|slice:':100' }}</p>
-                                                    <a class="btn btn-primary" href="{% url 'news_detail' news.id  }">Read More</a>
+                                                    <a class="btn btn-primary" href="{% url 'news_detail' new.id  %}">Read More</a>
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
@@ -178,71 +177,56 @@
                                             </form>
                                         </div>
                                         <div class="widget widget_related_search">
+
                                             <h4 class="widget-title" data-control>Related Searches</h4>
                                             <div class="widget_categories">
+                                                {% for new in news %}
                                                 <ul>
-                                                    <li><a href="#">Love stories <span>(18)</span></a></li>
-                                                    <li><a href="#">Texas <span>(04)</span></a></li>
-                                                    <li><a href="#">Rich people <span>(03)</span></a></li>
-                                                    <li><a href="#">Humorous stories <span>(02)</span></a></li>
-                                                    <li><a href="#">Widows <span>(02)</span></a></li>
-                                                    <li><a href="#">Women <span>(11)</span></a></li>
-                                                    <li><a href="#">Babysitters <span>(25)</span></a></li>
-                                                    <li><a href="#">Law firms <span>(09)</span></a></li>
+
+                                                    <li><a href="#">{{ new.category }}<span>(18)</span></a></li>
+
                                                 </ul>
+                                                {%endfor%}
                                             </div>
                                         </div>
                                         <div class="widget widget_recent_entries">
                                             <h4 class="widget-title" data-control>Recent News</h4>
                                             <ul>
+                                                {% for new in news %}
                                                 <li>
                                                     <figure>
                                                         <img src="images/order-item-04.jpg" alt="product" />
                                                     </figure>
                                                     <a href="#">It uses a dictionary</a>
-                                                    <span><i class="fa fa-calendar"></i> &nbsp; July 25, 2016</span>
-                                                    <span><i class="fa fa-clock-o"></i> &nbsp; 10:15 AM - 10:15 PM</span>
-                                                    <span><i class="fa fa-map-marker"></i> &nbsp; New York, USA</span>
+                                                    <span><i class="fa fa-calendar"></i> &nbsp; {{ new.created_at }}</span>
+                                                    <span><i class="fa fa-clock-o"></i> &nbsp; {{ new.created_at1 }}</span>
+                                                    <span><i class="fa fa-map-marker"></i> &nbsp;{{ new.location }}</span>
                                                     <div class="clearfix"></div>
                                                 </li>
-                                                <li>
-                                                    <figure>
-                                                        <img src="images/order-item-05.jpg" alt="product" />
-                                                    </figure>
-                                                    <a href="#">It uses a dictionary</a>
-                                                    <span><i class="fa fa-calendar"></i> &nbsp; July 25, 2016</span>
-                                                    <span><i class="fa fa-clock-o"></i> &nbsp; 10:15 AM - 10:15 PM</span>
-                                                    <span><i class="fa fa-map-marker"></i> &nbsp; New York, USA</span>
-                                                    <div class="clearfix"></div>
-                                                </li>
-                                                <li>
-                                                    <figure>
-                                                        <img src="images/order-item-06.jpg" alt="product" />
-                                                    </figure>
-                                                    <a href="#">It uses a dictionary</a>
-                                                    <span><i class="fa fa-calendar"></i> &nbsp; July 25, 2016</span>
-                                                    <span><i class="fa fa-clock-o"></i> &nbsp; 10:15 AM - 10:15 PM</span>
-                                                    <span><i class="fa fa-map-marker"></i> &nbsp; New York, USA</span>
-                                                    <div class="clearfix"></div>
-                                                </li>
+                                                {%endfor%}
                                             </ul>
                                         </div>
                                         <div class="widget widget_archives">
                                             <h4 class="widget-title" data-control>News Archives</h4>
                                             <form action="http://libraria.demo.presstigers.com/index.html" method="get">
+                                                {% for new in news %}
                                                 <div class="form-group">
                                                     <select name="month" id="month" class="form-control">
-                                                        <option>{{ new.created_at|date:'M'}}</option>
+                                                        <option>Select Month</option>
+                                                        {{ new.created_at|date:'M' }}
                                                     </select>
                                                 </div>
+                                                {%endfor%}
                                             </form>
                                         </div>
                                         <div class="widget widget_tag_cloud">
                                             <h4 class="widget-title" data-control>News Tags</h4>
+                                            {% for new in news %}
                                             <ul>
-                                                <li><a href="#">{{ new.tags }}</a></li>
+                                                <li><a href="#">{{ news.tags }}</a></li>
 
                                             </ul>
+                                            {%endfor%}
                                         </div>
                                         <div class="widget twitter-widget">
                                             <h3 class="footer-widget-title">Recent Tweets</h3>
