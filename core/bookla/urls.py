@@ -23,7 +23,8 @@ urlpatterns = [
     path('blog/' , include('apps.blog.urls')),
     path('cart/', include('apps.cart.urls') ),
     path('user/', include('apps.accounts.urls')),
-    path('book/', include('apps.books.urls'))
+    path('book/', include('apps.books.urls')),
+    path('news/', include('apps.news.urls'))
 ]
 
 from django.conf import settings

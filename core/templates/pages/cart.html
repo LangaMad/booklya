@@ -25,8 +25,8 @@
                                                 Stephen A. Schwarzman Building
                                             </li>
                                             <li>
-                                                <strong>Email:</strong>
-                                                <a href="mailto:scottfitzgerald@gmail.com">scottfitzgerald@gmail.com</a>
+                                                <strong>Total Price:</strong>
+                                                <a href="mailto:scottfitzgerald@gmail.com">{{ cart.total_price }}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -79,7 +79,7 @@
                                                                     </span>
                                                                 </td>
                                                                 <td data-title="Quantity" class="product-quantity">
-                                                                    <form method="post" action="{% url 'cart_update' item.id %}">
+                                                                    <form method="post" action="">
                                                                         {% csrf_token %}
                                                                         <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control">
                                                                         <input type="hidden" name="update" value="True">
@@ -87,9 +87,9 @@
                                                                     </form>
                                                                 </td>
                                                                 <td data-title="action" class="product-action">
-                                                                    <form method="post" action="{% url 'cart_remove' item.id %}">
+                                                                    <form method="post" action="">
                                                                         {% csrf_token %}
-                                                                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                                                        <button type="submit" class="btn btn-sm btn-danger"><a href="{% url 'cart_action' action='remove' cart_item_id=book.id %}">Remove</a></button>
                                                                     </form>
                                                                 </td>
                                                                 <td data-title="Price" class="product-price">
