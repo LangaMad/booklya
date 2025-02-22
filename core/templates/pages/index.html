@@ -30,11 +30,8 @@
                             <div class="form-group">
                                 <select name="category" id="category" class="form-control">
                                     <option>All Categories</option>
-                                    <option>Category 01</option>
-                                    <option>Category 02</option>
-                                    <option>Category 03</option>
-                                    <option>Category 04</option>
-                                    <option>Category 05</option>
+                                    <option>{{ posts.category }}</option>
+
                                 </select>
                             </div>
                         </div>
@@ -60,7 +57,7 @@
                                 <span class="underline left"></span>
                                 <p class="lead">The standard chunk of Lorem Ipsum used since</p>
                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humor, or non-characteristic words etc.</p>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <a class="btn btn-primary" href="{% url 'news' %}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -518,7 +515,7 @@
                     </li>
                 </ul>
                 <div class="center-content">
-                    <a href="#" class="btn btn-primary">View More</a>
+                    <a href="{% url 'news'%}" class="btn btn-primary">View More</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -534,7 +531,7 @@
                             <i class="yellow"></i>
                             <h3>Books</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="yellow" href="#">
+                            <a class="yellow" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -544,7 +541,7 @@
                             <i class="light-green"></i>
                             <h3>eBooks</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="light-green" href="#">
+                            <a class="light-green" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -554,7 +551,7 @@
                             <i class="blue"></i>
                             <h3>DVDs</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="blue" href="#">
+                            <a class="blue" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -564,7 +561,7 @@
                             <i class="red"></i>
                             <h3>Magazines</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="red" href="#">
+                            <a class="red" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -574,7 +571,7 @@
                             <i class="violet"></i>
                             <h3>Audio</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="violet" href="#">
+                            <a class="violet" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -584,7 +581,7 @@
                             <i class="green"></i>
                             <h3>eAudio</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui id, convallis iaculis eros.</p>
-                            <a class="green" href="#">
+                            <a class="green" href="{% url 'book_list' %}">
                                 View Selection <i class="fa fa-long-arrow-right"></i>
                             </a>
                         </div>
@@ -658,7 +655,7 @@
                                     </li>
                                 </ul>
                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here...</p>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <a class="btn btn-primary" href="{% url 'contact_us' %}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -693,7 +690,7 @@
                                     </li>
                                 </ul>
                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here...</p>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <a class="btn btn-primary" href="{% url 'contact_us' %}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -728,7 +725,7 @@
                                     </li>
                                 </ul>
                                 <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here...</p>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <a class="btn btn-primary" href="{% url 'contact_us' %}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -749,7 +746,7 @@
                     <div class="tabs-menu">
                         <ul>
                             <li class="active">
-                                <a href="#" class="bg-yellow">
+                                <a href="{% url 'book_list' %}" class="bg-yellow">
                                     <div class="title">
                                         <i class="yellow"></i>
                                         <h3>Books</h3>
@@ -757,7 +754,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="bg-light-green">
+                                <a href="{% url 'book_list' %}" class="bg-light-green">
                                     <div class="title">
                                         <i class="light-green"></i>
                                         <h3>eBooks</h3>
@@ -765,7 +762,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="bg-blue">
+                                <a href="{% url 'book_list' %}" class="bg-blue">
                                     <div class="title">
                                         <i class="blue"></i>
                                         <h3>DVDS</h3>
@@ -773,7 +770,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="bg-red">
+                                <a href="{% url 'book_list' %}" class="bg-red">
                                     <div class="title">
                                         <i class="red"></i>
                                         <h3>Magazines</h3>
@@ -781,7 +778,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="bg-violet">
+                                <a href="{% url 'book_list' %}" class="bg-violet">
                                     <div class="title">
                                         <i class="violet"></i>
                                         <h3>Audio</h3>
@@ -789,7 +786,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="bg-green">
+                                <a href="{% url 'book_list' %}" class="bg-green">
                                     <div class="title">
                                         <i class="green"></i>
                                         <h3>eAudio</h3>
@@ -801,12 +798,13 @@
                     <div class="tabs-list">
                         <div class="tab-content active">
                             <article>
+                                {% for post in posts %}
                                 <figure>
-                                    <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
+                                    <img src="{{ post.image.url }}" alt="Latest Blog">
                                     <figcaption>
                                         <a href="#.">
-                                            <span class="date">07</span>
-                                            <span class="month">Mar</span>
+                                            <span class="date">{{ post.created_at|date:'d'}}</span>
+                                            <span class="month">{{ post.created_at|date:'M'}}</span>
                                         </a>
                                     </figcaption>
                                 </figure>
@@ -833,242 +831,19 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <h4>It uses dictionary over 200 Latin</h4>
+                                    <h4>{{ post.title }}</h4>
                                     <div class="author">
-                                        <a href="#">
+                                        <a href="{% url 'profile' request.user.id%}">
                                             <i class="fa fa-user"></i> Adrey Pachai
                                         </a>
                                     </div>
-                                    <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
+                                    <p>{{post.text|slice:':100'}}</p>
+                                    <a class="btn btn-primary" href="{% url 'blog' %}">Read More</a>
                                 </div>
+                                {%endfor%}
                             </article>
                         </div>
-                        <div class="tab-content">
-                            <article>
-                                <figure>
-                                    <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
-                                    <figcaption>
-                                        <a href="#.">
-                                            <span class="date">06</span>
-                                            <span class="month">Mar</span>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-detail">
-                                    <div class="info-bar">
-                                        <div class="comments">
-                                            <a href="#">
-                                                <i class="fa fa-comment"></i> 37
-                                            </a>
-                                        </div>
-                                        <div class="likes">
-                                            <a href="#">
-                                                <i class="fa fa-thumbs-o-up"></i> 110
-                                            </a>
-                                        </div>
-                                        <div class="viewed">
-                                            <a href="#">
-                                                <i class="fa fa-eye"></i> 180
-                                            </a>
-                                        </div>
-                                        <div class="share">
-                                            <a href="#">
-                                                <i class="fa fa-share-alt"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <h4>eBooks</h4>
-                                    <div class="author">
-                                        <a href="#">
-                                            <i class="fa fa-user"></i> Adrey Pachai
-                                        </a>
-                                    </div>
-                                    <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="tab-content">
-                            <article>
-                                <figure>
-                                    <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
-                                    <figcaption>
-                                        <a href="#.">
-                                            <span class="date">05</span>
-                                            <span class="month">Mar</span>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-detail">
-                                    <div class="info-bar">
-                                        <div class="comments">
-                                            <a href="#">
-                                                <i class="fa fa-comment"></i> 37
-                                            </a>
-                                        </div>
-                                        <div class="likes">
-                                            <a href="#">
-                                                <i class="fa fa-thumbs-o-up"></i> 110
-                                            </a>
-                                        </div>
-                                        <div class="viewed">
-                                            <a href="#">
-                                                <i class="fa fa-eye"></i> 180
-                                            </a>
-                                        </div>
-                                        <div class="share">
-                                            <a href="#">
-                                                <i class="fa fa-share-alt"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <h4>DVDS</h4>
-                                    <div class="author">
-                                        <a href="#">
-                                            <i class="fa fa-user"></i> Adrey Pachai
-                                        </a>
-                                    </div>
-                                    <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="tab-content">
-                            <article>
-                                <figure>
-                                    <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
-                                    <figcaption>
-                                        <a href="#.">
-                                            <span class="date">04</span>
-                                            <span class="month">Mar</span>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-detail">
-                                    <div class="info-bar">
-                                        <div class="comments">
-                                            <a href="#">
-                                                <i class="fa fa-comment"></i> 37
-                                            </a>
-                                        </div>
-                                        <div class="likes">
-                                            <a href="#">
-                                                <i class="fa fa-thumbs-o-up"></i> 110
-                                            </a>
-                                        </div>
-                                        <div class="viewed">
-                                            <a href="#">
-                                                <i class="fa fa-eye"></i> 180
-                                            </a>
-                                        </div>
-                                        <div class="share">
-                                            <a href="#">
-                                                <i class="fa fa-share-alt"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <h4>Magazines</h4>
-                                    <div class="author">
-                                        <a href="#">
-                                            <i class="fa fa-user"></i> Adrey Pachai
-                                        </a>
-                                    </div>
-                                    <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="tab-content">
-                            <article>
-                                <figure>
-                                    <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
-                                    <figcaption>
-                                        <a href="#.">
-                                            <span class="date">03</span>
-                                            <span class="month">Mar</span>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-detail">
-                                    <div class="info-bar">
-                                        <div class="comments">
-                                            <a href="#">
-                                                <i class="fa fa-comment"></i> 37
-                                            </a>
-                                        </div>
-                                        <div class="likes">
-                                            <a href="#">
-                                                <i class="fa fa-thumbs-o-up"></i> 110
-                                            </a>
-                                        </div>
-                                        <div class="viewed">
-                                            <a href="#">
-                                                <i class="fa fa-eye"></i> 180
-                                            </a>
-                                        </div>
-                                        <div class="share">
-                                            <a href="#">
-                                                <i class="fa fa-share-alt"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <h4>Audio</h4>
-                                    <div class="author">
-                                        <a href="#">
-                                            <i class="fa fa-user"></i> Adrey Pachai
-                                        </a>
-                                    </div>
-                                    <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="tab-content">
-                            <article>
-                                <figure>
-                                    <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
-                                    <figcaption>
-                                        <a href="#.">
-                                            <span class="date">02</span>
-                                            <span class="month">Mar</span>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-detail">
-                                    <div class="info-bar">
-                                        <div class="comments">
-                                            <a href="#">
-                                                <i class="fa fa-comment"></i> 37
-                                            </a>
-                                        </div>
-                                        <div class="likes">
-                                            <a href="#">
-                                                <i class="fa fa-thumbs-o-up"></i> 110
-                                            </a>
-                                        </div>
-                                        <div class="viewed">
-                                            <a href="#">
-                                                <i class="fa fa-eye"></i> 180
-                                            </a>
-                                        </div>
-                                        <div class="share">
-                                            <a href="#">
-                                                <i class="fa fa-share-alt"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <h4>eAudio</h4>
-                                    <div class="author">
-                                        <a href="#">
-                                            <i class="fa fa-user"></i> Adrey Pachai
-                                        </a>
-                                    </div>
-                                    <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut.</p>
-                                    <a class="btn btn-dark-gray">Read More</a>
-                                </div>
-                            </article>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1086,7 +861,7 @@
                 <div class="owl-carousel">
                     <div class="single-testimonial-box">
                         <div class="top-portion">
-                            <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
+                            <img src="{% static 'images/testimonial-image-01.jpg'%}" alt="Testimonial Image" />
                             <div class="user-comment">
                                 <div class="arrow-left"></div>
                                 <blockquote cite="#">
@@ -1112,202 +887,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Maria B <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Adrey Pachai <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Maria B <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Adrey Pachai <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Maria B <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Adrey Pachai <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="top-portion">
-                            <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                            <div class="user-comment">
-                                <div class="arrow-left"></div>
-                                <blockquote cite="#">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="bottom-portion">
-                            <a href="#" class="author">
-                                Maria B <small>(Student )</small>
-                            </a>
-                            <div class="social-share-links">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -1322,9 +902,10 @@
                     <p class="lead c-light">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
                 </div>
                 <div class="news-events-list">
+                    {% for new in news %}
                     <div class="single-news-event">
                         <figure>
-                            <img src="{% static 'images/news-event/news-event-01.jpg' %}" alt="News & Event" />
+                            <img src="{{ new.image.url }}" alt="News & Event" />
                         </figure>
                         <div class="content-block">
                             <div class="member-info">
@@ -1335,91 +916,26 @@
                                 <ul class="news-event-info">
                                     <li>
                                         <a href="#" target="_blank">
-                                            <i class="fa fa-calendar"></i>
-                                            July 25, 2016
+                                            {{ new.created_at }}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class="fa fa-clock-o"></i>
-                                            10:15 AM - 10:15 PM
-                                        </a>
-                                    </li>
+
                                     <li>
                                         <a href="#" target="_blank">
                                             <i class="fa fa-map-marker"></i>
-                                            New York, USA
+                                             {{ new.location }}
                                         </a>
                                     </li>
                                 </ul>
-                                <h3><a href=".html#">It uses a dictionary of over 200 Latin word</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model.</p>
-                                <a class="btn btn-primary" href="#">Read More</a>
+                                <h3><a href=".html#">{{ new.title }}</a></h3>
+                                <p>{{ new.description|slice:':100' }}</p>
+                                <a class="btn btn-primary" href="{% url 'news' %}">Read More</a>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="single-news-event">
-                        <figure>
-                            <img src="{% static 'images/news-event/news-event-02.jpg' %}" alt="News & Event" />
-                        </figure>
-                        <div class="content-block">
-                            <div class="member-info">
-                                <div class="content_meta_category">
-                                    <span class="arrow-right"></span>
-                                    <a href="#." rel="category tag">EVENT</a>
-                                </div>
-                                <ul class="news-event-info">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class="fa fa-calendar"></i>
-                                            July 25, 2016
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class="fa fa-map-marker"></i>
-                                            New York, USA
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3><a href=".html#">It uses a dictionary of over 200 Latin word</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', </p>
-                                <a class="btn btn-primary" href="#">Read More</a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="single-news-event">
-                        <figure>
-                            <img src="{% static 'images/news-event/news-event-03.jpg' %}" alt="News & Event" />
-                        </figure>
-                        <div class="content-block">
-                            <div class="member-info">
-                                <div class="content_meta_category">
-                                    <span class="arrow-right"></span>
-                                    <a href="#." rel="category tag">EVENT</a>
-                                </div>
-                                <ul class="news-event-info">
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class="fa fa-calendar"></i>
-                                            July 25, 2016
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class="fa fa-map-marker"></i>
-                                            New York, USA
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3><a href=".html#">It uses a dictionary of over 200 Latin word</a></h3>
-                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', </p>
-                                <a class="btn btn-primary" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    {%endfor%}
+
                     <div class="clearfix"></div>
                 </div>
             </div>
