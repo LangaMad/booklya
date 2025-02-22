@@ -6,7 +6,6 @@ idea
 __pycache__
 __idea__
 /migrations
-migrations
 .env
 core/.env
 .idea/booklya.iml
